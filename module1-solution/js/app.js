@@ -8,19 +8,19 @@
     function LunchCheckController($scope){
         $scope.lunchDishes = "";
         $scope.lunchMessage = "";
+        $scope.colorMessage = "";
+        $scope.styleMessage = "";
+        $scope.borderSolid = "none";
         $scope.countDishes = function(){
             if ( $scope.lunchDishes ){
                 let arrayDishes =  $scope.lunchDishes.split(',')
-                if(arrayDishes.length <= 3){
-                    $scope.lunchMessage = "Enjoy";
-                }
-                else{
-                    $scope.lunchMessage = "Too much!";
-                }
-                
+                $scope.lunchMessage =  arrayDishes.length <= 3 ? "Enjoy" : "Too much!";
+                $scope.colorMessage = "green";
             }else{
                 $scope.lunchMessage = "Please enter data first";
+                $scope.colorMessage = "red";
             }
+            $scope.borderSolid = "solid"
         }
     }
 
