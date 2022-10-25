@@ -6,24 +6,76 @@
     <link rel="stylesheet" href="styles/bootstrap.min.css">
     <style>
       .message { font-size: 1.3em; font-weight: bold; }
+      .outputImg {max-height: 200px;}
+      h4{
+        font-weight: bold;
+      }
+      a{
+        font-size:1.5em;
+      }
     </style>
   </head>
 <body>
-   <div class="container" ng-controller="LunchCheckController">
-     <h1>Lunch Checker</h1>
-         <div class="form-group">
-             <input ng-model="lunchDishes" id="lunch-menu" type="text"
-             placeholder="list comma separated dishes you usually have for lunch"
-             class="form-control">
-         </div>
-         <div class="form-group">
-             <button ng-click="countDishes()" class="btn btn-default">Check If Too Much</button>
-         </div>
-         <div class="form-group message">
-            <span style="color:{{colorMessage}};border:{{borderSolid}};border-color:{{colorMessage}}">{{lunchMessage}}</span>
-         </div>
-   </div>
+  
+  <div class="container">
+    <h1>Single Page Angular App Coursera Assignment 1 </h1>
+    <div class="container" ng-controller="LunchCheckController">
+      <h1>Lunch Checker</h1>
+          <div class="form-group">
+              <input ng-model="lunchDishes" id="lunch-menu" type="text"
+              placeholder="list comma separated dishes you usually have for lunch"
+              class="form-control">
+          </div>
+          <div class="form-group">
+              <button ng-click="countDishes()" class="btn btn-default">Check If Too Much</button>
+          </div>
+          <div class="form-group message">
+             <span style="color:{{colorMessage}};border:{{borderSolid}};border-color:{{colorMessage}}">{{lunchMessage}}</span>
+          </div>
+    </div>
+    <h3>Author: Alfredo A. Delgado L.</h3>
+    <p>In this assigment the objetive is create a front-end application that presents the user with a textbox where they can list comma-separated items they usually eat for lunch. Once that's entered, the user has to click the "Check If Too Much" button.
 
+      If the number of items in the textbox is less than or equal to 3 (e.g., 1, 2, or 3), a message should show up under to the textbox saying "Enjoy!". If the number of items is greater than 3 (4, 5, and above), the message "Too much!" should show up under the textbox </p>
+    <h3>Rules:</h3>
+    <ul>
+      <li>
+        You are not allowed to use regular HTML onclick attribute to bind behavior to the button. You must use the AngularJS way of binding behavior.
+      </li>
+      <li>
+        At no point should your Javascript code look up anything in the DOM of the browser.
+      </li>
+    </ul>
+    <h3>Additional</h3>
+    <ul>
+      <li>
+        If the message is "Enjoy!" or "Too much!", make the font color green. If the message is "Please enter data first", make the font color red.
+      </li>
+      <li>
+        If the message is "Enjoy!" or "Too much!", make the border color around the textbox green. If the message is "Please enter data first", make the border color around the textbox red.
+      </li>
+    </ul>
+    <h3>Examples and Output</h3>
+    <div class="row">
+      <div class="col-md-4">
+        <h4>Adding less than 3 items</h4>
+        <img ng-src="assets\lunch_app_enjoy.PNG" class="outputImg" alt="">
+      </div>
+      <div class="col-md-4">
+        <h4>Adding more than 3 items</h4>
+        <img ng-src="assets\lunch_app_to_much.PNG" class="outputImg" alt="">
+      </div>
+      <div class="col-md-4">
+        <h4>The field is empty or has " " string</h4>
+        <img ng-src="assets\lunch_app_empty.PNG" class="outputImg" alt="">
+      </div>
+    </div>
+
+    <h3>References and links</h3>
+    <br>
+    <a href="https://www.coursera.org/learn/single-page-web-apps-with-angularjs">Single Page Web Applications with AngularJS (Coursera) </a>
+
+  </div>
 </body>
 <script src="angular.min.js"></script>
 <script src="js/app.js"></script>
